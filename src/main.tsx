@@ -5,9 +5,11 @@ import { App } from './app/App';
 import './styles/variables.css';
 import './styles/global.css';
 
+const basename = import.meta.env.BASE_URL === '/' ? undefined : import.meta.env.BASE_URL;
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <App />
     </BrowserRouter>
   </React.StrictMode>,
